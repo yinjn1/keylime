@@ -1,0 +1,52 @@
+# PROC_SUPER_MAGIC
+dont_measure fsmagic=0x9fa0
+dont_appraise fsmagic=0x9fa0
+# SYSFS_MAGIC
+dont_measure fsmagic=0x62656572
+dont_appraise fsmagic=0x62656572
+# DEBUGFS_MAGIC
+dont_measure fsmagic=0x64626720
+dont_appraise fsmagic=0x64626720
+# TMPFS_MAGIC
+dont_measure fsmagic=0x01021994
+dont_appraise fsmagic=0x1021994
+# RAMFS_MAGIC
+dont_measure fsmagic=0x858458f6
+dont_appraise fsmagic=0x858458f6
+# DEVPTS_SUPER_MAGIC
+dont_measure fsmagic=0x1cd1
+dont_appraise fsmagic=0x1cd1
+# BINFMTFS_MAGIC
+dont_measure fsmagic=0x42494e4d
+dont_appraise fsmagic=0x42494e4d
+# SECURITYFS_MAGIC
+dont_measure fsmagic=0x73636673
+dont_appraise fsmagic=0x73636673
+# SELINUX_MAGIC
+dont_measure fsmagic=0xf97cff8c
+dont_appraise fsmagic=0xf97cff8c
+# SMACK_MAGIC
+dont_measure fsmagic=0x43415d53
+dont_appraise fsmagic=0x43415d53
+# CGROUP_SUPER_MAGIC
+dont_measure fsmagic=0x27e0eb
+dont_appraise fsmagic=0x27e0eb
+# CGROUP2_SUPER_MAGIC
+dont_measure fsmagic=0x63677270
+dont_appraise fsmagic=0x63677270
+# OVERLAYFS_SUPER_MAGIC
+dont_measure fsmagic=0x794c7630
+dont_appraise fsmagic=0x794c7630
+# NSFS_MAGIC
+dont_measure fsmagic=0x6e736673
+dont_appraise fsmagic=0x6e736673
+# Don't measure log, audit or tmp files
+dont_measure obj_type=var_log_t
+dont_measure obj_type=auditd_log_t
+dont_measure obj_type=tmp_t
+dont_measure func=MODULE_CHECK
+dont_measure func=FIRMWARE_CHECK
+# MEASUREMENTS
+measure func=BPRM_CHECK mask=MAY_EXEC uid=0
+measure func=MMAP_CHECK mask=MAY_EXEC uid=0
+measure func=FILE_CHECK mask=MAY_EXEC uid=0
